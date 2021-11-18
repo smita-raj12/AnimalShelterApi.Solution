@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AnimalShelter.Models;
-using Microsoft.OpenApi.Models;
 
 namespace AnimalShelter
 {
@@ -22,10 +21,12 @@ namespace AnimalShelter
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<AnimalShelterContext>(opt =>
+                opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(c=>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AnimalShelter", Version = "v1" });
+                c.SwaggerDoc(name:"v1", info:new Microsoft.OpenApi.Models.OpenApiInfo{Title = "Animal shelter", Version = "v1"});
             });
         }
 
@@ -36,10 +37,10 @@ namespace AnimalShelter
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AnimalShelter v1"));
+                app.UseSwaggerUI(c=>c.SwaggerEndpoint(url:"/swagger/v1/swagger.json",name:"Animal shelter v1"));
             }
 
-            //app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
