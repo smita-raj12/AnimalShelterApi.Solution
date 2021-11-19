@@ -41,7 +41,7 @@ Animal Shelter Api is for local animal shelter. This API will list the available
                 }
           },
           "JwtConfig": {
-                          "Secret": "nqtzpuotvysttmszowthxgzugzckedzp"
+                          "Secret": "{YOUR_SECRET_KEY}"
                       },
           "AllowedHosts": "*",
           "ConnectionStrings":
@@ -50,7 +50,7 @@ Animal Shelter Api is for local animal shelter. This API will list the available
           }
         }                                                      
 
-5. Remove the {YOUR_USERNAME_NAME} and {YOUR_PASSWORD} and fill in the the code snippet with your username for MySQL, and MySQL password Do not include the curly brackets in your code snippet of appsettings.json
+5. Remove the {YOUR_USERNAME_NAME} and {YOUR_PASSWORD} and fill in the the code snippet with your username for MySQL, and MySQL password Do not include the curly brackets in your code snippet of appsettings.json, and to access jwt create one json Secret key on [https://www.browserling.com/tools/random-string](https://www.browserling.com/tools/random-string) dont forget to add length(32).
 
 6. Make sure EF Core is installed to create and utilize migrations. Run the following code in the git BASH terminal to install. `$ dotnet tool install --global dotnet-ef --version 3.0.0`
 
@@ -67,6 +67,9 @@ Animal Shelter Api is for local animal shelter. This API will list the available
 ## API Endpoints
 
 * HTTP Request URL: http://localhost:5000
+* For create account URL: http://localhost:5000/api/AuthManagement/Register
+* To acces all request URLs first create an account. You will get a token on Postman body
+  copy that token, on api/cats get method navigate to header section add a key as Authentication and value as Bearer and paste your copied token.  
 * Request 
 
         GET /api/cats
@@ -95,9 +98,11 @@ Animal Shelter Api is for local animal shelter. This API will list the available
 
 ## Documentation utilized for further explorations:      
 
-[Swagger documentation](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0&viewFallbackFrom=aspnetcore-50)
+* [Swagger documentation](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0&viewFallbackFrom=aspnetcore-50)
 
-[Video link](https://www.youtube.com/watch?v=nY-w9wPFEuY)
+* [Video link](https://www.youtube.com/watch?v=nY-w9wPFEuY)
+
+* [Video link for Json Web Token](https://www.youtube.com/watch?v=LgpC4tYtc6Y&t=923s)
 
 ## Known bugs
 
