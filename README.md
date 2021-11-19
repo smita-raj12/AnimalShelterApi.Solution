@@ -18,6 +18,7 @@ Animal Shelter Api is for local animal shelter. This API will list the available
   * Entity Framework Core
   * Postman
   * Swagger
+  * Json Web Token
 
   ## Setup/Installation Requirements
 
