@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AnimalShelter.Models;
+using System;
 
 namespace AnimalShelter.Controllers
 {
@@ -114,5 +115,13 @@ namespace AnimalShelter.Controllers
 
       return NoContent();
     }
+    //Get api/cats/random
+    [HttpGet("random")]
+    public ActionResult<Cat> Get()
+    {
+      int count = _db.Cats.Count();
+      int index = new Random().Next(count);
+      return _db.Cats.Skip(index).FirstOrDefault();
+    } 
   }
 }
