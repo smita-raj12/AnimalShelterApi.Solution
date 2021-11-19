@@ -66,33 +66,35 @@ Animal Shelter Api is for local animal shelter. This API will list the available
 * HTTP Request URL: http://localhost:5000
 * Request 
 
-      `GET /api/cats
+        GET /api/cats
         POST /api/cats
         GET /api/cats/{id}
         PUT /api/cats/{id}
-        DELETE /api/cats/{id}` 
+        DELETE /api/cats/{id}
 
-        `GET /api/dogs
+        GET /api/dogs
         POST /api/dogs
         GET /api/dogs/{id}
         PUT /api/dogs/{id}
-        DELETE /api/dogs/{id}` 
+        DELETE /api/dogs/{id} 
 
-        `GET /api/otherAnimals
+        GET /api/otherAnimals
         POST /api/otherAnimals
         GET /api/otherAnimals/{id}
         PUT /api/otherAnimals/{id}
-        DELETE /api/otherAnimals/{id}` 
+        DELETE /api/otherAnimals/{id} 
 
 ### examples of a request URL query string:
 
-        `http://localhost:5000/api/cats/?gender=male&age=1
+        http://localhost:5000/api/cats/?gender=male&age=1
         https://localhost:5001/api/dogs?name=Pancake
-        https://localhost:5001/api/otherAnimals?age=1`
+        https://localhost:5001/api/otherAnimals?age=1
 
 ## Documentation utilized for further explorations:      
 
 [Swagger documentation](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0&viewFallbackFrom=aspnetcore-50)
+
+[Video link](https://www.youtube.com/watch?v=nY-w9wPFEuY)
 
 ## Known bugs
 
