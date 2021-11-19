@@ -40,6 +40,9 @@ Animal Shelter Api is for local animal shelter. This API will list the available
                   "Microsoft": "Information"
                 }
           },
+          "JwtConfig": {
+                          "Secret": "nqtzpuotvysttmszowthxgzugzckedzp"
+                      },
           "AllowedHosts": "*",
           "ConnectionStrings":
           {
