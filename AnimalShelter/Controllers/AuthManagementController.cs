@@ -54,12 +54,12 @@ namespace AnimalShelter.Controllers
                 var isCreated = await _userManager.CreateAsync(newUser, user.Password);
                 if(isCreated.Succeeded)
                 {
-                  var jwtToken =  GenerateJwtToken( newUser);
+                    var jwtToken =  GenerateJwtToken( newUser);
 
-                  return Ok(new RegistrationResponse() {
-                      Success = true,
-                      Token = jwtToken
-                  });
+                    return Ok(new RegistrationResponse() {
+                        Success = true,
+                        Token = jwtToken
+                    });
                 } else {
                     return BadRequest(new RegistrationResponse(){
                             Errors = isCreated.Errors.Select(x => x.Description).ToList(),
@@ -96,7 +96,7 @@ namespace AnimalShelter.Controllers
                 var isCorrect = await _userManager.CheckPasswordAsync(existingUser, user.Password);
 
                 if(!isCorrect) {
-                      return BadRequest(new RegistrationResponse(){
+                    return BadRequest(new RegistrationResponse(){
                             Errors = new List<string>() {
                                 "Invalid login request"
                             },
